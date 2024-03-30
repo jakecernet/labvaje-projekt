@@ -17,4 +17,25 @@ echo ^|                                                    __/ ^|               
 echo ^|                                                   ^|___/                                                             ^|
 echo ^|                                                                                                                     ^|
 echo ^|                                                                                                                     ^|
+echo ^|                                                                                                                     ^|
+echo ^|                                                 1. Classic forkbomb                                                 ^|
+echo ^|                                                                                                                     ^|
+echo ^|                                                  2. Ultra forkbomb                                                  ^|
+echo ^|                                                                                                                     ^|
+echo ^|                                                     3. Virus 3                                                      ^|
+echo ^|                                                                                                                     ^|
+echo ^|                                                     4. Virus 4                                                      ^|
+echo ^|                                                                                                                     ^|
+echo ^|                                                     5. Virus 5                                                      ^|
+echo ^|                                                                                                                     ^|
+echo ^|                                                                                                                     ^|
 echo ^|_____________________________________________________________________________________________________________________^|
+echo.
+echo.
+choice /c:12345 /n /m "Select a virus: "
+if %errorlevel%==1 goto virus1
+if %errorlevel%==2 goto virus2
+if %errorlevel%==3 goto virus3
+if %errorlevel%==4 goto virus4
+if %errorlevel%==5 goto virus5
+
