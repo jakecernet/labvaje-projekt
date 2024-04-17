@@ -11,6 +11,8 @@ if errorlevel 3 goto about
 
 :VIRUS
 start virus\main.cmd
+exit
 
 :GAME
 start games\main.cmd
+exit
