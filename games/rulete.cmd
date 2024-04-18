@@ -15,11 +15,11 @@ echo.
 :loop
 set /p bet="Enter your bet: "
 if %bet%==exit goto exit
-set /a balance=%balance%-%bet%
 set /p amount="Enter the amount you want to bet: "
+set /a balance=%balance%-%amount%
 if %amount% gtr %balance% (
     echo.                                           You don't have enough money!
-    set /a balance=%balance%+%bet%
+    set /a balance=%balance%+%amount%
     goto loop
 )
 set /a balance=%balance%-%amount%
@@ -28,13 +28,16 @@ echo.
 echo.                                                   The number is: %number%
 echo.
 if %number%==%bet% (
-    set /a balance=%balance%+%bet%*36
+    set /a balance=%balance%+%amount%*36
     echo.                                           You won! Your balance is: %balance%
     goto prompt
 )
-if %number% %% 2==1 (
-    if %bet%==odd (
-        set /a balance=%balance%+%bet%*2
+
+set /a newnumber=%number% %% 2
+
+if %newnumber%==0 (
+    if %bet%==even (
+        set /a balance=%balance%+%amount%*2
         echo.                                           You won! Your balance is: %balance%
         goto prompt
     ) else (
@@ -42,17 +45,15 @@ if %number% %% 2==1 (
         goto prompt
     )
 ) else (
-    if %bet%==even (
-        set /a balance=%balance%+%bet%*2
+    if %bet%==odd (
+        set /a balance=%balance%+%amount%*2
         echo.                                           You won! Your balance is: %balance%
         goto prompt
     ) else (
         echo.                                           You lost! Your balance is: %balance%
         goto prompt
-    )    
+    )
 )
-
-echo.                                           You lost! Your balance is: %balance%
 
 :prompt
 echo.
