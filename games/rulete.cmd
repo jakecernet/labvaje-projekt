@@ -17,12 +17,12 @@ set /p bet="Enter your bet: "
 if %bet%==exit goto exit
 set /p amount="Enter the amount you want to bet: "
 set /a balance=%balance%-%amount%
+set /a pay=0
 if %amount% gtr %balance% (
     echo.                                           You don't have enough money!
     set /a balance=%balance%+%amount%
     goto loop
 )
-set /a balance=%balance%-%amount%
 set /a number=%random% %% 37
 echo.
 echo.                                                   The number is: %number%
@@ -35,9 +35,11 @@ if %number%==%bet% (
 
 set /a newnumber=%number% %% 2
 
+set /a payout=%amount% * 2
+
 if %newnumber%==0 (
     if %bet%==even (
-        set /a balance=%balance%+%amount%*2
+        set /a balance=%balance%+%amount%+%payout%        
         echo.                                           You won! Your balance is: %balance%
         goto prompt
     ) else (
@@ -46,7 +48,7 @@ if %newnumber%==0 (
     )
 ) else (
     if %bet%==odd (
-        set /a balance=%balance%+%amount%*2
+        set /a balance=%balance%+%payout%
         echo.                                           You won! Your balance is: %balance%
         goto prompt
     ) else (
