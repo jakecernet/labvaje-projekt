@@ -1,0 +1,3 @@
+botDificulty=1 
+speedMode=off
+color=7 
