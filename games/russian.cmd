@@ -3,7 +3,7 @@ color 0a
 title Russian Roulette
 echo.
 echo.
-echo.                             I want to play a game...
+echo.                              I want to play a game...
 echo.
 echo.
 echo.                                  Russian Roulette
