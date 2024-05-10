@@ -32,7 +32,7 @@ echo ^|                                                                         
 echo ^|_____________________________________________________________________________________________________________________^|
 echo.
 echo.
-choice /c:12345 /n /m "|"
+choice /c:12345 /n /m ".."
 if %errorlevel%==1 goto virus1
 if %errorlevel%==2 goto virus2
 if %errorlevel%==3 goto virus3

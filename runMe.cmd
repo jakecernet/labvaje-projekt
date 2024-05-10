@@ -4,15 +4,22 @@ color 0a
 type text.txt
 echo.
 echo.
-choice /C:123 /N /M "..."
-if errorlevel 1 goto virus
-if errorlevel 2 goto game   
-if errorlevel 3 goto about
+set /p choice=Choose an option: 
 
-:VIRUS
-start virus\main.cmd
+if "%choice%"=="1" goto option1
+if "%choice%"=="2" goto option2
+if "%choice%"=="3" goto option3
+
+:option1
+cd virus
+start main.cmd
 exit
 
-:GAME
-start games\main.cmd
+:option2
+cd games
+start main.cmd
+exit
+
+:option3
+start about.cmd
 exit
