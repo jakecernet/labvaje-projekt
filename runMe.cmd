@@ -1,17 +1,7 @@
 @echo off
- net session >nul 2>&1
- if [%errorLevel%] == [0] (
- 	echo Access granted.
- ) else (
- 	echo Failure: Current permissions inadequate.
-    pause
-    exit
- )
 title Welcome!
 color 0a
-cd "%~dp0"
-echo %~dp0
-type .\text.txt
+type text.txt
 echo.
 echo.
 set /p choice=Choose an option: 
