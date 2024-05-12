@@ -1,0 +1,7 @@
+Pozdravljeni!
+To je projekt, ki sem ga naredil za predmet LAV na VEGOVI.
+Vključuje 3 podprograme:
+ - izbirnik iger
+ - izbirnik virusov
+ - o programu
+ 

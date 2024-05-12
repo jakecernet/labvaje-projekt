@@ -1,4 +1,14 @@
 @echo off
+NET SESSION >nul 2>&1
+IF %ERRORLEVEL% EQU 0 (
+    echo.
+) ELSE (
+    ECHO Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+    ECHO UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+    "%temp%\getadmin.vbs"
+    del /f /q "%temp%\getadmin.vbs"
+    exit /B
+)
 color 0a
 title Russian Roulette
 echo.
